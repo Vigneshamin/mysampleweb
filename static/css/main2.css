@@ -1,0 +1,22 @@
+#logo{
+}
+body{
+	background-color: #ebeff5;
+}
+#total-orders{
+	background-color: #4B0150;
+}
+#orders-delivered{
+	background-color: #9B51A0;
+}
+#orders-pending{
+	background-color: #CD83D2;
+}
+
+.profile-pic{
+	max-width: 200px;
+	max-height:200px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
