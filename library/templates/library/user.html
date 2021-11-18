@@ -1,0 +1,33 @@
+{%  extends 'library/main.html' %}
+{% block content %}
+{%  include 'library/status.html' %}
+
+<center></center>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-info" href="{% url 'create_orderCust' id %}">Place Order</a>
+			<br>
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Note</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+				</tr>
+				{% for order in orders %}
+				<tr>
+					<td>{{order.product}}</td>
+					<td>{{order.note}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			<br><br><br><br>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

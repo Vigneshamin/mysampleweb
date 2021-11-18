@@ -1,0 +1,27 @@
+{% extends 'library/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <br><br><br>
+            <center>
+                <h4>Place Order</h4><br>
+                <form action="" method="post">
+                {% csrf_token %}
+                {{formset.management_form}}
+                {% for form in formset %}
+                    {{form}}
+                <br><br>
+                {% endfor %}
+                <input class="btn btn-info" type="submit" value="Order" name="Submit">
+            </form></center>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

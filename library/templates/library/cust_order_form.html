@@ -1,0 +1,49 @@
+{% extends 'library/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+
+            <center>
+				<h4>Place An Order</h4>
+				<form action="" method="post">
+                {% csrf_token %}
+                {{formset.management_form}}
+                {% for form in formset %}
+                    {{form}}
+                <hr>
+                {% endfor %}
+                <input class="btn btn-info" type="submit" value="Order" name="Submit">
+            </form></center>
+        </div>
+    </div>
+</div>
+
+		<br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Products</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Product</th>
+							<th>Category</th>
+							<th>Price</th>
+						</tr>
+						{% for i in products %}
+							<tr>
+								<td>{{ i.name }}</td>
+								<td>{{ i.category }}</td>
+								<td>{{ i.price }}</td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}
